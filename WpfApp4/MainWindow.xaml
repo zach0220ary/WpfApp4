@@ -3,10 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfApp4"
+        xmlns:local="clr-namespace:_2026_WpfApp3"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
-        Title="WPF小畫家ver1" Height="450" Width="800">
+        Title="WPF小畫家ver2" Height="589" Width="1057">
     <DockPanel>
         <Menu DockPanel.Dock="Top" Height="30">
             <MenuItem Header="檔案" Height="30" VerticalAlignment="Center" FontSize="16">
@@ -36,11 +36,18 @@
                 <RadioButton Height="35" Width="35" FontSize="16" Checked="ShapeButton_Checked" FontWeight="Bold" Tag="Polyline">
                     <Image Source="/polyline.png" />
                 </RadioButton>
+                <Separator/>
+                <Button x:Name="EraserButton" Width="35" Height="35" Tag="Eraser" Click="EraserButton_Click">
+                    <Image Source="/eraser.PNG"/>
+                </Button>
+                <Button x:Name="ClearButton" Width="35" Height="35" Tag="Eraser" Click="ClearButton_Click">
+                    <Image Source="/trashcan.PNG"/>
+                </Button>
             </ToolBar>
         </ToolBarTray>
         <StatusBar Height="35" Background="LightGray" DockPanel.Dock="Bottom">
-            <StatusBarItem Width="200">
-                <Label x:Name="StatusLabel" Content="Ready" VerticalAlignment="Center" FontSize="14" Width="150" Margin="10,0,0,0"/>
+            <StatusBarItem Width="400">
+                <Label x:Name="StatusLabel" Content="Ready" VerticalAlignment="Center" FontSize="14" Width="350" Margin="10,0,0,0"/>
             </StatusBarItem>
             <Separator/>
             <StatusBarItem Width="200">
@@ -51,6 +58,6 @@
                 <Label x:Name="ColorLabel" Content="色彩" VerticalAlignment="Center" FontSize="14" Margin="10,0,0,0"/>
             </StatusBarItem>
         </StatusBar>
-        <Canvas Background="#FFF5F5E7"/>
+        <Canvas x:Name="MyCanvas" Background="#FFF5F5E7" MouseEnter="MyCanvas_MouseEnter" MouseLeftButtonDown="MyCanvas_MouseLeftButtonDown" MouseMove="MyCanvas_MouseMove" MouseLeftButtonUp="MyCanvas_MouseLeftButtonUp"/>
     </DockPanel>
 </Window>
